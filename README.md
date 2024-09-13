@@ -1,1 +1,1 @@
-Repositorio administrado por Ramiro López e Iván Majer. Alumnos de informatica UNLP.
+Repositorio administrado por Ramiro López e Iván Majer, alumnos de informatica UNLP.
