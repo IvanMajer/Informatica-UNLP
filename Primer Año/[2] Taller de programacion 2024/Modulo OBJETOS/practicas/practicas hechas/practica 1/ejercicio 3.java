@@ -57,6 +57,29 @@ public class Ej03Matrices {
         
         for (int n=0; n<=4; n++)
             System.out.println (vector[n]);
+
+	System.out.println("Ingrese valor entero");
+        int num = Lector.leerInt();
+        
+        int f = 0;
+        int c = 0;
+        boolean ok = false;
+        while ((f < 5) && (!ok))
+                {
+            while ((c < 5) && (matriz[f][c] != num))
+                  c++;
+            if (c == 5){
+                c = 0;
+                f++;
+            } else
+                ok = true;
+                }
+        if (ok)
+            System.out.println("Fila: "+f+" Columna: "+c);
+        else
+            System.out.println("El numero ingresado no se encontró");
+            }
+}    
         
     
     }
