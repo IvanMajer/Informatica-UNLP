@@ -14,6 +14,7 @@ public class main {
 		System.out.println ("-----");
 		tp1_ej1.UseIter(a, b);
 		System.out.println ("-----");
+		Scan.close();
 	}
 		
 }
