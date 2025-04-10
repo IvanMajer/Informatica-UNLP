@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mi Primera Página con JavaScript</title>
+    </head>
+    <body>
+        <h1>¡Hola Mundo!</h1>
+        <script>
+           console.log('Hola Mundo')
+ 
+ 
+           let text = "Lorem ipsum dolor sit amet";  // 5 palabras de Lorem Ipsum
+           let subString = text.substring(1,4);
+           let mayus = subString.toUpperCase();
+           console.log(mayus);
+ 
+           console.log(text);  // Muestra el contenido de la variable 'text'.
+           function contarCaracteres(text) {
+               const posicion = text.indexOf("ipsum");
+ 
+               if (posicion !== -1){
+                   console.log("se encontro : ",posicion);
+                }else{
+                   console.log("NO SE ENCONTRO");
+                }
+ 
+           return text.length;  // Devuelve el número de caracteres en 'texto'
+           }
+ 
+           let cantidadCaracteres = contarCaracteres(text);
+ 
+           console.log("La cantidad de caracteres es:", cantidadCaracteres);
+        </script>
+    </body>
+</html>

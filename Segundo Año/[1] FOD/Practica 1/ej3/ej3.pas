@@ -16,6 +16,7 @@ var
 	archivo: ArchivoEmpleados;
 	nombre : string; 
 	buscar :string; 
+	verificador: boolean;
 BEGIN
 	write('Ingrese el nombre del archivo: ');
 	readln (nombre); 
@@ -49,36 +50,41 @@ BEGIN
 		readln(auxEmp.dni);
 	
 	end; 
-	Close (archivo);
-	verificador = false; 
+	Close(archivo);
+	verificador := false; 
 	
 	Reset (archivo);
 	write('Ingrese el nombre o apellido a buscar: ');
 	readln (buscar);
 	while (not EOF(archivo)) and (verificador <> true) do
 	begin
-		read (archivo, auxEmp) 
+		read (archivo, auxEmp); 
 		
 		if (auxEmp.nombre = buscar) or (auxEmp.apellido = buscar) then
-			
+		begin	
 			with auxEmp do 
-				writeln (nEmpleado, apellido, nombre, edad, dni );
+				writeln (nEmpleado,'', apellido,'', nombre,'', edad,'', dni );
 			
-			verificador = true; 
+			verificador := true;
+		end;
 	end; 
 	close(archivo);
+	rewrite (archivo);
+	
+	
+	
+	
+	while (not EOF(archivo)) do 
+	begin
+	 Read(archivo,auxEmp);
+	 with auxEmp do 
+		writeln(nEmpleado, apellido, nombre, edad, dni);
+	end;
+	
 	
 	while (not EOF(archivo)) do
 	begin
-		with auxEmp do
-			writeln (archivo, nEmpleado, apellido, nombre, edad, dni);
-	end; 
-	
-	
-	
-	while (not EOF(archivo)) do
-	begin
-		read (archivo, auxEmp) 
+		read (archivo, auxEmp); 
 		
 		if (auxEmp.edad > 70) then
 			
